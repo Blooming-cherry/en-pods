@@ -834,6 +834,8 @@ body.is-playing .p-play .ico-pause{display:block}
 .lib-cover{position:relative;height:120svh;background:#183c5c;overflow:clip}
 .cover-stage{position:sticky;top:0;height:100svh;overflow:hidden;background:#183c5c}
 .cover-stage .hero-scene{z-index:0}
+/* 光源落在主峰上：与首屏同一套图层，位置固定在山尖（约 x10% / y38%） */
+.cover-stage .scene-light{left:8%;top:31.5%;width:58vmax;height:58vmax;opacity:.58;transform:translate(-50%,-50%)}
 .cover-copy{
   position:relative;z-index:5;height:100%;display:grid;place-content:center;justify-items:center;
   gap:clamp(14px,1.6vw,24px);padding:0 var(--gutter);text-align:center;
