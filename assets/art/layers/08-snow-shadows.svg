@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="114 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">雪原微起伏的背光与柔和阴影</title>
+  <defs>
+    <linearGradient id="shadow" x1="0" y1="0" x2=".1" y2="1">
+      <stop stop-color="#284e75" stop-opacity=".19"/>
+      <stop offset=".6" stop-color="#315b7f" stop-opacity=".07"/>
+      <stop offset="1" stop-color="#42688a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="low-relief-shadows" fill="url(#shadow)">
+    <path d="M78 861 C258 850 452 845 678 848 C508 851 337 855 182 862 L84 866Z"/>
+    <path d="M494 841 C738 832 989 833 1254 839 C1068 839 873 837 694 841 L504 845Z"/>
+    <path d="M930 858 C1191 851 1451 858 1715 872 C1482 867 1231 860 982 862Z"/>
+  </g>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="114 0 1600 900" role="img" aria-labelledby="plain-title">
+  <title id="plain-title">低缓雪原与远处地平线</title>
+  <defs>
+    <linearGradient id="snow-distance" gradientUnits="userSpaceOnUse" x1="0" y1="810" x2="0" y2="900">
+      <stop offset="0" stop-color="#c6d9e5"/>
+      <stop offset="1" stop-color="#91aec3"/>
+    </linearGradient>
+  </defs>
+  <g id="snowfield">
+    <path fill="url(#snow-distance)" d="M-160 873 C130 844 325 829 575 825 C895 818 1400 700 2000 552 L2000 1800 L-160 1800Z"/>
+  </g>
+</svg>

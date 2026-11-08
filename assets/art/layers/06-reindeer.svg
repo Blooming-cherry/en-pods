@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="-224 -264 2048 1152" role="img" aria-labelledby="reindeer-title">
+  <title id="reindeer-title">右下方踏雪向左行走的驯鹿</title>
+  <g id="footing" fill="#b9d2dd">
+    <path opacity=".46" d="M1109 829.8 Q1120 829.4 1139 828.3 Q1147 828 1153 828.5 Q1143 829.1 1136 829.9 Q1126 830.7 1109 829.8 Z"/>
+    <path opacity=".3" d="M1163 827.9 Q1170 827.6 1182 826.9 Q1188 826.7 1197 827.2 Q1184 827.4 1178 828.1 Q1170 828.7 1163 827.9 Z"/>
+  </g>
+  <g id="reindeer" transform="translate(1190 741) scale(-1 1)">
+    <g id="far-antler" fill="none" stroke="#a4bac9" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M66 32 C65 23 70 21 73 17 Q77 12 78 6"/>
+      <path d="M72 18 Q71 13 72 9 M75 13 Q81 12 84 8 M69 23 Q72 23 76 20"/>
+    </g>
+    <g id="far-legs" fill="#a4bac9">
+      <path d="M21 51 Q32 53 30 63 L26 69 L32 80 L37 82 L37 84 L30 83 L22 70 L21 66 L17 59 Z"/>
+      <path d="M50 52 L57 53 Q55 61 53 65 L62 71 L69 78 L70 81 L66 80 L59 73 L49 68 Q47 66 47 63 Z"/>
+    </g>
+    <path id="coat" fill="#f4ede0" d="M11 50 Q6 49 3 44 Q7 44 12 46 Q16 39 27 40 Q39 43 49 41 Q55 38 59 33 L63 29 Q59 28 57 23 Q63 23 67 27 L70 26 Q74 25 77 29 L87 33 L87 35 Q84 38 79 36 L73 35 Q68 38 64 46 L64 49 L61 48 L60 53 L58 52 L56 57 Q52 61 47 61 Q39 63 28 58 L24 61 L19 65 L17 71 L10 83 L10 85 L5 86 L7 82 L14 70 L14 62 Q10 58 11 50 Z"/>
+    <path id="near-foreleg" fill="#f4ede0" d="M46 54 L56 55 Q55 60 53 64 L52 73 L52.5 83 L55 87.5 L50 87.5 L49 83 L48.5 73 L49 65 L46 60 Z"/>
+    <path id="flank-shadow" fill="#46617a" d="M12 52 Q17 55 21 51 Q24 48 28 47 Q25 55 31 56 Q38 59 47 55 Q52 54 56 49 L53 56 L49 60 Q42 63 29 57 L24 59.5 Q25 55 22 54 Q18 58 16 63 Q17 58 12 55 Z"/>
+    <path id="throat-shadow" fill="#718397" d="M63 38 Q68 38 73 33 L78 35 L73 34 Q68 37 63 45 L60 49 Q63 43 63 38 Z"/>
+    <path fill="#f3ad67" d="M11 47 Q16 38 27 40 Q35 42 42 41.8 Q36 43.7 26 41.5 Q18 40 11 47 Z"/>
+    <g id="near-antler" fill="none" stroke="#fff4df" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke-width="1.85" d="M68 28 Q64 23 58 21 C49 19 43 14 43 7 Q43 4 44 2"/>
+      <path stroke-width="1.35" d="M47 15 Q40 14 37 10 L35 6 M52 19 Q49 14 51 8 M58 21 Q55 16 57 12 M62 23 Q59 19 61 16 M42 12 Q39 11 39 7"/>
+    </g>
+    <path fill="#1c3953" d="M85 32.1 L88 33.1 L87 35 L84.5 34.8 Z M72.5 29.2 Q74 28.7 75 30 Q73.1 31.4 72.5 29.2 Z M60 25 Q63 25 65 27.5 Q62 27.3 60 25 Z"/>
+  </g>
+</svg>

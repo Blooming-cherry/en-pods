@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="-224 -264 2048 1152" role="img" aria-labelledby="title">
+  <title id="title">驯鹿脚下的接触阴影与向右投影</title>
+  <defs>
+    <linearGradient id="deer-shadow" x1="0" y1="0" x2="1" y2=".3">
+      <stop stop-color="#294c6d" stop-opacity=".25"/>
+      <stop offset="1" stop-color="#294c6d" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#deer-shadow)" d="M1153 828 L1166 827 L1256 843 Q1233 844 1210 838Z"/>
+  <ellipse cx="1158" cy="828.5" rx="11" ry="1" fill="#294c6d" opacity=".24"/>
+</svg>

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIAL — English podcasts, one dial</title>
+<meta name="description" content="Search any English podcast and play it. Nothing re-hosted; your place is remembered.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23004ea2'/%3E%3Ccircle cx='16' cy='16' r='8.5' fill='none' stroke='%23fff' stroke-width='2.2'/%3E%3Cline x1='16' y1='16' x2='21.5' y2='10.5' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css?v=20261108-layout-v5">
+</head>
+<body>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#/">
+      <span class="logo-mark">DIAL</span>
+      <span class="logo-sub">English podcasts</span>
+    </a>
+
+    <form class="searchbar" id="searchForm" role="search" autocomplete="off">
+      <div class="searchbar-field">
+        <svg class="searchbar-icon" viewBox="0 0 20 20" aria-hidden="true">
+          <circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+          <line x1="12.6" y1="12.6" x2="17" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <input id="q" name="q" type="search" placeholder="Search shows, topics, hosts" spellcheck="false">
+      </div>
+      <button class="btn-blue" type="submit">Search</button>
+    </form>
+
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-hidden="true" aria-label="Sections" inert>
+  <button class="mobile-close" id="mobileClose" type="button" aria-label="Close menu">&times;</button>
+  <ul>
+    <li><a href="#/">Stations</a></li>
+    <li><a href="#/saved">My dial</a></li>
+    <li><a href="#/log">Listening log</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- ══════════════════ HOME ══════════════════ -->
+<div class="view" id="view-home">
+
+  <section class="hero">
+    <div class="hero-visual">
+    <div class="hero-scene" aria-hidden="true">
+      <div class="scene-camera">
+      <div class="scene-group">
+        <img class="scene-layer" data-depth="0"    src="assets/art/layers/01-sky.svg" alt="" draggable="false">
+        <img class="scene-layer" data-depth="0.025" src="assets/art/layers/02-far-ridge.svg" alt="" draggable="false">
+        <img class="scene-layer" data-depth="0.06" src="assets/art/layers/03-mountain.svg" alt="" draggable="false">
+        <img class="scene-layer" data-depth="0.06" src="assets/art/layers/04-alpenglow.svg" alt="" draggable="false">
+        <img class="scene-layer" data-depth="0.11" src="assets/art/layers/05-foreground.svg" alt="" draggable="false">
+      </div>
+      <div class="scene-near" data-depth="0.11">
+        <!-- The horizon follows the hero's visible bounds, independent of cover cropping. -->
+        <svg class="scene-ground" viewBox="0 0 1600 900" preserveAspectRatio="none" focusable="false">
+          <rect x="0" y="899" width="1600" height="900" fill="#91aec3"/>
+          <image href="assets/art/layers/07-east-plain.svg?v=20261107-lighting" width="1600" height="900"/>
+          <image class="snow-shadows" href="assets/art/layers/08-snow-shadows.svg?v=20261108-journey-v2" width="1600" height="900"/>
+          <image class="snow-fill" href="assets/art/layers/09-snow-fill.svg?v=20261108-journey-v2" width="1600" height="900"/>
+          <image class="snow-sheen" data-normal="-0.08 1 -0.05" data-roughness="0.56" href="assets/art/layers/10-snow-sheen-west.svg?v=20261108-journey-v2" width="1600" height="900"/>
+          <image class="snow-sheen" data-normal="0.06 1 0.04" data-roughness="0.56" href="assets/art/layers/11-snow-sheen-middle.svg?v=20261108-journey-v2" width="1600" height="900"/>
+          <image class="snow-sheen" data-normal="-0.03 1 0.1" data-roughness="0.56" href="assets/art/layers/12-snow-sheen-east.svg?v=20261108-journey-v2" width="1600" height="900"/>
+        </svg>
+        <!-- A tight view of the full-canvas source keeps this small landmark visible. -->
+        <svg class="scene-reindeer" viewBox="1098 737 105 98" focusable="false">
+          <image class="deer-shadow" href="assets/art/layers/13-deer-shadow.svg" x="-224" y="-264" width="2048" height="1152"/>
+          <image class="reindeer-coat" href="assets/art/layers/06-reindeer.svg" x="-224" y="-264" width="2048" height="1152"/>
+        </svg>
+      </div>
+      </div>
+      <div class="scene-light"></div>
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1 class="hero-title">All the podcasts,<br>one dial.</h1>
+        <p class="hero-sub">Search any show in English. Press play. It remembers your place.</p>
+      </div>
+
+      <div class="hero-stage">
+        <div class="hero-viewport">
+          <div class="hero-track" id="heroTrack"></div>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="journey-bridge">
+      <p class="journey-line">Let's jump in the journey of English</p>
+    </div>
+    </div>
+  </section>
+
+  <div class="home-library" id="homeLibrary" aria-hidden="true" inert>
+
+  <!-- 01 · current affairs -->
+  <section class="lib lib-news" id="sec-news">
+    <div class="lib-inner">
+      <div class="lib-head">
+        <p class="lib-eyebrow"><b>01</b>Current affairs</p>
+        <h2 class="lib-title">Today, from the people who reported it.</h2>
+        <p class="lib-meta" id="newsMeta"></p>
+      </div>
+      <div class="win-grid" id="newsGrid"></div>
+    </div>
+  </section>
+
+  <!-- 02 · classic: pinned, centred -->
+  <section class="lib-classic" id="sec-classic">
+    <div class="lib-pin">
+      <div class="lib-inner">
+        <p class="lib-eyebrow" style="margin-bottom:18px"><b>02</b>Classic · full recording</p>
+        <div class="classic" id="classicWrap"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · entertainment: two mirrored panes, pinned -->
+  <section class="lib-cine" id="sec-ent">
+    <div class="lib-cine-stage" id="cineStage">
+      <div class="lib-head">
+        <p class="lib-eyebrow"><b>03</b>Entertainment</p>
+        <p class="lib-meta" id="entMeta"></p>
+      </div>
+      <div class="cine-split" id="entSplit"></div>
+      <p class="cine-count"><b id="cineNow">01</b><span class="cine-bar"><i></i></span><span id="cineTotal">02</span></p>
+    </div>
+  </section>
+
+  <!-- 04 · closing page: reuses the hero background verbatim -->
+  <section class="lib-cover" id="sec-cover">
+    <div class="cover-stage" id="coverStage">
+      <div class="hero-scene" aria-hidden="true">
+        <div class="scene-camera">
+          <div class="scene-group">
+            <img class="scene-layer" data-depth="0" src="assets/art/layers/01-sky.svg" alt="" draggable="false">
+            <img class="scene-layer" data-depth="0.025" src="assets/art/layers/02-far-ridge.svg" alt="" draggable="false">
+            <img class="scene-layer" data-depth="0.06" src="assets/art/layers/03-mountain.svg" alt="" draggable="false">
+            <img class="scene-layer" data-depth="0.06" src="assets/art/layers/04-alpenglow.svg" alt="" draggable="false">
+            <img class="scene-layer" data-depth="0.11" src="assets/art/layers/05-foreground.svg" alt="" draggable="false">
+          </div>
+          <div class="scene-near" data-depth="0.11">
+            <svg class="scene-ground" viewBox="0 0 1600 900" preserveAspectRatio="none" focusable="false">
+              <rect x="0" y="899" width="1600" height="900" fill="#91aec3"/>
+              <image href="assets/art/layers/07-east-plain.svg?v=20261107-lighting" width="1600" height="900"/>
+              <image class="snow-shadows" href="assets/art/layers/08-snow-shadows.svg?v=20261108-ascent" width="1600" height="900"/>
+              <image class="snow-fill" href="assets/art/layers/09-snow-fill.svg?v=20261108-ascent" width="1600" height="900"/>
+              <image class="snow-sheen" data-normal="-0.08 1 -0.05" data-roughness="0.56" href="assets/art/layers/10-snow-sheen-west.svg?v=20261108-ascent" width="1600" height="900"/>
+              <image class="snow-sheen" data-normal="0.06 1 0.04" data-roughness="0.56" href="assets/art/layers/11-snow-sheen-middle.svg?v=20261108-ascent" width="1600" height="900"/>
+              <image class="snow-sheen" data-normal="-0.03 1 0.1" data-roughness="0.56" href="assets/art/layers/12-snow-sheen-east.svg?v=20261108-ascent" width="1600" height="900"/>
+            </svg>
+            <svg class="scene-reindeer" viewBox="1098 737 105 98" focusable="false">
+              <image class="deer-shadow" href="assets/art/layers/13-deer-shadow.svg" x="-224" y="-264" width="2048" height="1152"/>
+              <image class="reindeer-coat" href="assets/art/layers/06-reindeer.svg" x="-224" y="-264" width="2048" height="1152"/>
+            </svg>
+          </div>
+        </div>
+        <div class="scene-light"></div>
+      </div>
+
+      <div class="cover-copy">
+        <p class="cover-quote">“仰观宇宙之大，俯察品类之盛”</p>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+</div>
+
+<!-- ══════════════════ SEARCH ══════════════════ -->
+<div class="view" id="view-search" hidden>
+  <section class="band">
+    <h2 class="h-jfn" id="searchTitle"></h2>
+    <p class="band-note" id="searchNote"></p>
+    <div class="grid-4" id="searchGrid"></div>
+  </section>
+</div>
+
+<!-- ══════════════════ SHOW ══════════════════ -->
+<div class="view" id="view-show" hidden>
+  <section class="band show-band">
+    <a class="backlink" href="#/">&lsaquo; All stations</a>
+    <div class="show-layout">
+      <aside class="show-aside">
+        <img class="show-art" id="showArt" alt="">
+        <h2 class="show-name" id="showName"></h2>
+        <p class="show-pub" id="showPub"></p>
+        <dl class="specs">
+          <div><dt>Genre</dt><dd id="showGenre"></dd></div>
+          <div><dt>Episodes</dt><dd id="showCount"></dd></div>
+          <div><dt>Latest</dt><dd id="showLatest"></dd></div>
+        </dl>
+        <div class="show-actions">
+          <button class="btn-blue" id="showPlayLatest" type="button">Play latest</button>
+          <button class="btn-outline" id="showSave" type="button"></button>
+        </div>
+        <p class="show-desc" id="showDesc"></p>
+      </aside>
+
+      <div class="show-eps">
+        <h3 class="eps-head">Episode log <span class="eps-count" id="epCount"></span></h3>
+        <ol class="eplist" id="eplist"></ol>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════ SAVED ══════════════════ -->
+<div class="view" id="view-saved" hidden>
+  <section class="band">
+    <h2 class="h-jfn">My dial</h2>
+    <p class="band-note">Shows you keep coming back to.</p>
+    <div class="grid-4" id="savedGrid"></div>
+    <p class="empty" id="savedEmpty" hidden>Nothing saved yet. Open a station and press <strong>Save</strong>.</p>
+  </section>
+</div>
+
+<!-- ══════════════════ LOG ══════════════════ -->
+<div class="view" id="view-log" hidden>
+  <section class="band">
+    <h2 class="h-jfn">Listening log</h2>
+    <p class="band-note">Everything you started, and the minute you got to.</p>
+    <ol class="loglist" id="loglist"></ol>
+    <p class="empty" id="logEmpty" hidden>Empty. Play something and it will appear here.</p>
+  </section>
+</div>
+
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">DIAL</p>
+    <p class="footer-text">
+      A search front-end for Apple's public podcast directory. Every show, episode, artwork and
+      audio file belongs to the people who made it — DIAL stores none of it.
+    </p>
+    <nav class="footer-nav">
+      <a href="#/">Stations</a><span>|</span>
+      <a href="#/saved">My dial</a><span>|</span>
+      <a href="#/log">Listening log</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ══════════════════ PLAYER ══════════════════ -->
+<div class="player" id="player" hidden>
+  <img class="p-art" id="pArt" alt="">
+  <div class="p-meta">
+    <p class="p-show" id="pShow"></p>
+    <p class="p-title" id="pTitle"></p>
+    <p class="p-note" id="pNote" role="status" hidden></p>
+  </div>
+
+  <div class="p-controls">
+    <button class="p-btn" id="rew" type="button" aria-label="Back 15 seconds">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 6v12L3 12z" fill="currentColor"/><path d="M21 6v12l-8-6z" fill="currentColor"/></svg>
+      <span>15</span>
+    </button>
+    <button class="p-btn p-play" id="play" type="button" aria-label="Play">
+      <svg class="ico-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+      <svg class="ico-pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="7.5" y="5.5" width="3.4" height="13" rx="1.2" fill="currentColor"/><rect x="13.1" y="5.5" width="3.4" height="13" rx="1.2" fill="currentColor"/></svg>
+    </button>
+    <button class="p-btn" id="ff" type="button" aria-label="Forward 30 seconds">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 6v12l8-6z" fill="currentColor"/><path d="M3 6v12l8-6z" fill="currentColor"/></svg>
+      <span>30</span>
+    </button>
+    <button class="p-speed" id="rate" type="button" aria-label="Playback speed">1×</button>
+  </div>
+
+  <div class="p-progress">
+    <span class="p-time" id="tCur">0:00</span>
+    <input class="p-seek" id="seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek">
+    <span class="p-time" id="tDur">0:00</span>
+  </div>
+
+  <button class="p-close" id="pClose" type="button" aria-label="Close player">&times;</button>
+</div>
+
+<script src="scene-motion.js?v=20261108-stages-v3"></script>
+<script src="content.js?v=20261108-layout-v5"></script>
+<script src="app.js?v=20261108-layout-v5"></script>
+</body>
+</html>

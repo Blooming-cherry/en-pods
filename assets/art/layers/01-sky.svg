@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="114 0 1600 900" role="img" aria-labelledby="title-01-sky"><title id="title-01-sky">钴蓝天幕与山后的辉光</title><defs>
+<linearGradient id="sky-blue" x1="0" y1=".82" x2="1" y2=".22">
+<stop offset="0" stop-color="#317cb8"/><stop offset=".29" stop-color="#0658a6"/><stop offset=".5" stop-color="#004ea2"/><stop offset=".76" stop-color="#063a77"/><stop offset="1" stop-color="#0a254d"/>
+</linearGradient>
+<radialGradient id="sky-light" gradientUnits="userSpaceOnUse" cx="0" cy="0" r="1" gradientTransform="translate(-210 455) scale(1020 880)">
+<stop offset="0" stop-color="#fffaf0" stop-opacity=".34"/><stop offset=".19" stop-color="#e5f3f8" stop-opacity=".30"/><stop offset=".43" stop-color="#a4d6ee" stop-opacity=".22"/><stop offset=".72" stop-color="#579ed5" stop-opacity=".10"/><stop offset="1" stop-color="#4488c3" stop-opacity="0"/>
+</radialGradient>
+</defs><rect x="-80" y="-80" width="1960" height="1060" fill="url(#sky-blue)"/><rect x="-80" y="-80" width="1960" height="1060" fill="url(#sky-light)"/></svg>

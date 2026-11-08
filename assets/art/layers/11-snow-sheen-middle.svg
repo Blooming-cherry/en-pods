@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2560" height="1440" viewBox="114 0 1600 900" role="img" aria-labelledby="title">
+  <title id="title">中段雪面宽柔反光</title>
+  <defs>
+    <clipPath id="surface"><path d="M-160 873 C130 844 325 829 575 825 C895 818 1400 700 2000 552 L2000 1800 L-160 1800Z"/></clipPath>
+    <radialGradient id="light"><stop stop-color="#fff9eb" stop-opacity="0.65"/><stop offset=".5" stop-color="#fff9eb" stop-opacity="0.22"/><stop offset="1" stop-color="#fff9eb" stop-opacity="0"/></radialGradient>
+  </defs>
+  <g clip-path="url(#surface)"><ellipse cx="925" cy="825" rx="440" ry="170" fill="url(#light)"/></g>
+</svg>
