@@ -836,17 +836,28 @@ body.is-playing .p-play .ico-pause{display:block}
 .cover-stage .hero-scene{z-index:0}
 .cover-copy{
   position:relative;z-index:5;height:100%;display:grid;place-content:center;justify-items:center;
-  padding:0 var(--gutter);text-align:center;
+  gap:clamp(14px,1.6vw,24px);padding:0 var(--gutter);text-align:center;
 }
+/* 宋体一行排开，行宽约半个视口；下方英文小注用正文字体 */
 .cover-quote{
-  margin:0;max-width:24ch;
+  margin:0;
   font-family:"SimSun","宋体","Songti SC","Noto Serif CJK SC",serif;
-  font-size:29.33px;            /* 二号 = 22pt */
-  line-height:1.75;
+  font-size:clamp(17px,3.3vw,64px);
+  line-height:1.24;
   font-weight:400;
-  letter-spacing:.06em;
+  letter-spacing:.01em;
+  white-space:nowrap;
   color:#fff;
   text-shadow:0 2px 22px rgba(8,14,28,.5),0 0 2px rgba(8,14,28,.35);
+}
+.cover-sub{
+  margin:0;
+  font-family:"Urbanist",system-ui,sans-serif;
+  font-size:var(--t-aux);
+  font-weight:var(--w-body);
+  letter-spacing:.01em;
+  color:rgba(255,255,255,.84);
+  text-shadow:0 1px 12px rgba(8,14,28,.45);
 }
 
 /* ── narrow screens ────────────────────────────────────────── */
@@ -877,7 +888,7 @@ body.is-playing .p-play .ico-pause{display:block}
   .shot-title{font-size:28px;max-width:24ch}
   .shot-copy{padding:20px}
   .play{width:44px}
-  .cover-quote{font-size:29.33px;letter-spacing:.04em;line-height:1.8}
+  .cover-quote{font-size:4.4vw;letter-spacing:0}
 }
 @media (prefers-reduced-motion:reduce){
   .cover-img,.reveal{opacity:1!important;transform:none!important}
